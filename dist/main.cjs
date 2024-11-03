@@ -39897,6 +39897,9 @@ async function getTokenFromOwner(request2, auth5, parsedOwner) {
     type: "installation",
     installationId: response.data.id
   });
+
+  core3.info(`test1`);
+  
   const installationId = response.data.id;
   const appSlug = response.data["app_slug"];
   return { authentication, installationId, appSlug };
@@ -39909,6 +39912,7 @@ async function getTokenFromRepository(request2, auth5, parsedOwner, parsedReposi
       hook: auth5.hook
     }
   });
+  core3.info(`test2`);
   const authentication = await auth5({
     type: "installation",
     installationId: response.data.id,
