@@ -28,7 +28,7 @@ jobs:
   hello-world:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/create-github-app-token@v1
+      - uses: DefenseDevOps/create-github-app-token@v1.0
         id: app-token
         with:
           app-id: ${{ vars.APP_ID }}
