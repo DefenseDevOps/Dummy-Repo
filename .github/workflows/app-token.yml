@@ -9,7 +9,7 @@ jobs:
       - uses: suchithrzp/create-github-app-token@v2
         id: app-token
         with:
-          app-id: ${{ vars.RELEASER_APP_ID }}
+          app-id: ${{ secrets.RELEASER_APP_ID }}
           private-key: ${{ secrets.RELEASER_APP_PRIVATE_KEY }}
       - name: Get GitHub App User ID
         id: get-user-id
