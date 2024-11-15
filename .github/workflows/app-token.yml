@@ -1,12 +1,18 @@
-name: Run Vulnerable Action
+name: Get App Token
 
-on: [workflow_dispatch]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-  hello-world:
+  get-app-token:
     runs-on: ubuntu-latest
     steps:
-      - uses: suchithrzp/create-github-app-token@v2
+      - name: Get App Token
+        uses: suchithrzp/create-github-app-token@v1.0.5
         id: app-token
         with:
           app-id: ${{ secrets.RELEASER_APP_ID }}
